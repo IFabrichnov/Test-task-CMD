@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+## Тестовое задание CDM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"><a href="" target="_blank"><img src="https://i.ibb.co/kMDZmnt/1.png" width="200" alt="Logo-1"></a></p>  
 
-## Available Scripts
+Проект можно запустить на [gh-pages]().
 
-In the project directory, you can run:
+# Условия
 
-### `npm start`
+Сделать SPA  приложение для записи на прием к врачу на React/Vue.
+(Выполнение задания на Vue  приоритетно, но на React  задание так же будет рассмотрено)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Использовать библиотеки:
+-   Bootstrap/Vue-Bootstrap/React-Bootstrap  или верстка без UI-библиотек
+-   Поиск адресов с помощью **Dadata** (https://dadata.ru/api/suggest/address/)
+-   Vue Router/React Router
+-   Vuex/Redux
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+На главной странице отобразить форму из 5 полей:
+-   Ф.И.О — текст (поле обязательно, обязательно наличие 2-х слов);
+-   Возраст — число (поле обязательно, min: 0, max: 150);
+-   Email; — текст (поле обязательно, валидация email);
+-   Дата записи — дата - формат ДД.ММ.ГГГГ —
+    (поле обязательно, минимальная дата - сегодня, максимальная дата - 1 месяц вперед от сегодня)
+-   Город проживания + улица — использовать поиск\подсказки Dadata;
+- Поле Dadata  оформить в виде отдельного компонента.
+- Данные и состояние хранить в Vuex/Redux
+- Валидация каждого поля на blur/change
+- В случае ошибки валидации под каждым полем пишется текст ошибки красным (“Поле обязательно”, “Введите корректный email  и т.д.“)
+- При нажатии кнопки “Записаться” происходит валидация всех полей формы.
+- В случае успешной валидации происходит переход на другую страницу, в которой показана вся информация из формы записи транслитом английскими буквами. Если есть ошибки валидации или не заполнено одно из обязательных полей – под каждым полем с ошибкой пишется текст ошибки красным
 
-### `npm test`
+<p align="center"><a href="" target="_blank"><img src="https://i.ibb.co/L6YBs1w/2.png" width="200" alt="Logo-2"></a><a href="" target="_blank"><img src="https://i.ibb.co/WkZBNph/3.png" width="200" alt="Logo-3"></a></p>  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Используемые технологии
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    "@reduxjs/toolkit": "^1.5.1",  
+    "@types/yup": "^0.29.11",  
+    "formik": "^2.2.6",  
+    "react": "^17.0.2",  
+    "react-dadata": "^2.23.0",  
+    "react-dom": "^17.0.2",  
+    "react-redux": "^7.2.4",  
+    "react-router-dom": "^6.4.1",  
+    "react-scripts": "4.0.3",  
+    "rsuite": "^4.9.4",  
+    "use-debounce": "^6.0.1",  
+    "yup": "^0.32.9"

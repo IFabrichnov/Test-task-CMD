@@ -17,16 +17,18 @@ const nextMonth = new Date(
 );
 
 const taskSchema = Yup.object().shape({
-    fio: Yup.string().required('Поле обязательно').matches(/\w+\s+\w+/, 'Нужно больее 1 слова'),
+    fio: Yup.string().required('Поле обязательно').matches(/\p{L}+\s\p{L}+/u, 'Нужно больее 1 слова'),
     how_old: Yup.number().min(0, 'Не должно быть отрицательным').max(150, 'Не выше 150').required('Поле обязательно'),
     mail: Yup.string().email('Это не email').required('Поле обязательно'),
-    date: Yup.date().min(yesterday,'Минимальная дата - сегодня').max(nextMonth, 'Не больше месяца вперед').required('Поле обязательно')
+    date: Yup.date().min(yesterday,'Минимальная дата - сегодня').max(nextMonth, 'Не больше месяца вперед').required('Поле обязательно'),
+    hours: Yup.string().required('Поле обязательно')
 });
 
 const selectFio = (state) => state.form.fio;
 const selectHowOld = (state) => state.form.how_old;
 const selectEmail = (state) => state.form.mail;
 const selectDate = (state) => state.form.date;
+const selectHours = (state) => state.form.hours;
 const selectAddress = (state) => state.form.address;
 
 const Form = () => {
@@ -35,6 +37,7 @@ const Form = () => {
     const how_old = useSelector(selectHowOld);
     const mail = useSelector(selectEmail);
     const date = useSelector(selectDate);
+    const hours = useSelector(selectHours);
     const address = useSelector(selectAddress);
     const navigate = useNavigate();
 
@@ -52,6 +55,7 @@ const Form = () => {
                         how_old: how_old,
                         mail: mail,
                         date: date,
+                        hours: hours,
                         address: address
                     }}
                     validationSchema={taskSchema}
@@ -162,6 +166,30 @@ const Form = () => {
                                         }}
                                         onBlur={handleBlur}
                                         value={values.date}
+                                    />
+                                </Whisper>
+
+                                <Whisper
+                                    trigger="none"
+                                    open={errors.hours && touched.hours}
+                                    speaker={<Tooltip>{errors.hours}</Tooltip>}
+                                >
+                                    <Input
+                                        size="lg"
+                                        type="time"
+                                        name="hours"
+                                        placeholder="Время"
+                                        style={{
+                                            borderColor:
+                                                errors.hours && touched.hours ? 'red' : 'inherit',
+                                            marginBottom: 20,
+                                        }}
+                                        onChange={(val, event) => {
+                                            handleChange(event)
+                                            updateValFromStore('hours', val)
+                                        }}
+                                        onBlur={handleBlur}
+                                        value={values.hours}
                                     />
                                 </Whisper>
 

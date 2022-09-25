@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { AddressSuggestions } from "react-dadata";
+import React, {useState} from "react";
+import {AddressSuggestions} from "react-dadata";
 import "react-dadata/dist/react-dadata.css";
 import {useDispatch} from "react-redux";
 import {useDebouncedCallback} from "use-debounce";
@@ -20,12 +20,11 @@ const Dadata = () => {
     }
 
     return (
-        <div>
-            <AddressSuggestions token={API_KEY} value={value} onChange={(val, event) => {
-                handleChange(event)
-                updateValFromStore('address', val)
-            }} />
-        </div>
+        <AddressSuggestions inputProps={{placeholder: "Адрес"}} token={API_KEY} value={value}
+                            onChange={(val, event) => {
+                                handleChange(event)
+                                updateValFromStore('address', val)
+                            }}/>
     );
 };
 

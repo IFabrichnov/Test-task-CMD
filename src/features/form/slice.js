@@ -7,6 +7,7 @@ const form = createSlice({
     how_old: '',
     mail: '',
     date: '',
+    hours: '',
     address: ''
   },
   reducers: {

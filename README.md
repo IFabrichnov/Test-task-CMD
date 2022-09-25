@@ -2,8 +2,6 @@
 
 <p align="center"><a href="" target="_blank"><img src="https://i.ibb.co/kMDZmnt/1.png" width="200" alt="Logo-1"></a></p>  
 
-Проект можно запустить на [gh-pages]().
-
 # Условия
 
 Сделать SPA  приложение для записи на прием к врачу на React/Vue.

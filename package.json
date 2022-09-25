@@ -2,6 +2,7 @@
   "name": "test-task-CMD",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://IFabrichnov.github.io/Test-task-CMD",
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "@types/yup": "^0.29.11",
     "formik": "^2.2.6",
+    "gh-pages": "^4.0.0",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dadata": "^2.23.0",
@@ -24,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

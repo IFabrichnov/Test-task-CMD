@@ -29,7 +29,7 @@
 - При нажатии кнопки “Записаться” происходит валидация всех полей формы.
 - В случае успешной валидации происходит переход на другую страницу, в которой показана вся информация из формы записи транслитом английскими буквами. Если есть ошибки валидации или не заполнено одно из обязательных полей – под каждым полем с ошибкой пишется текст ошибки красным
 
-<p align="center"><a href="" target="_blank"><img src="https://i.ibb.co/L6YBs1w/2.png" width="200" alt="Logo-2"></a><a href="" target="_blank"><img src="https://i.ibb.co/WkZBNph/3.png" width="200" alt="Logo-3"></a></p>  
+<p align="center"><a href="" target="_blank"><img src="https://i.ibb.co/L6YBs1w/2.png" width="300" alt="Logo-2"></a><a href="" target="_blank"><img src="https://i.ibb.co/WkZBNph/3.png" width="229" alt="Logo-3"></a></p>  
 
 ### Используемые технологии
 

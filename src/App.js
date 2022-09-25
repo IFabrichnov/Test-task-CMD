@@ -9,7 +9,7 @@ function App() {
   return (
     <Container>
       <Routes>
-          <Route path={process.env.PUBLIC_URL + '/'} element={<Form />} />
+          <Route path="/" element={<Form />} />
           <Route path="all-data" element={<AllData />} />
       </Routes>
     </Container>
